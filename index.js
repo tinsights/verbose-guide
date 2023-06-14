@@ -33,12 +33,20 @@ async function allMovies() {
         categories += $(cat).text();
       });
 
+    const descriptionEl = $(movieEl).find(".event-list-item-module--blurb--1Mh9e");
+    const descriptions = [];
+    descriptionEl.find("p").each((idx, d) => {
+      descriptions.push($(d).last().text());
+    });
+
     movies.push({
       title,
       rating,
       categories,
+      descriptions,
     });
   });
+  console.log(movies);
   return movies;
 }
 
