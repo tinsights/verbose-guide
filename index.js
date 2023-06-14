@@ -6,7 +6,7 @@ const PORT = process.env.PORT || 3070;
 
 async function main() {
   app.get("/", (req, res) => res.send("MOVIES!~"));
-  app.get("/allMovies", async function (req, res) {
+  app.get("/movies/all", async function (req, res) {
     const movies = await allMovies();
     res.json(movies);
   });
